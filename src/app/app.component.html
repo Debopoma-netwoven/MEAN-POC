@@ -1,0 +1,17 @@
+<h1>MongoDB Add - Edit - Delete on imported JSON Data</h1>
+
+<table *ngFor="let user of users">
+<tr width="100%">
+  <td width="15%">{{ user.relapse_id }}</td>
+  <td width="10%">{{ user.relapse_month }} </td>
+  <td width="10%">{{ user.relapse_year }}</td>
+  <td width="10%"><button (click)='deleteRel(user.relapse_id)' class="button">Delete</button></td>
+  <td width="10%"><span>relapse_month</span></td>
+  <td width="10%"><input #textbox type="text" text="user.relapse_month" [(ngModel)]="user.relapse_month" name="month"></td>
+  <td width="10%"><span>relapse_year</span></td>
+  <td width="10%"><input #textbox type="text" text="user.relapse_year" [(ngModel)]="user.relapse_year" name="year"></td>
+  <td width="10%"><button (click)='editRel(user.relapse_id)'  class="button">Edit</button></td>
+</tr>
+</table>
+<button style="margin-left:45%;margin-top:5%;"  class="button" (click)='addData()'>Add Data</button>
+
